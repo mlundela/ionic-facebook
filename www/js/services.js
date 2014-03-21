@@ -50,7 +50,7 @@ angular.module('starter.services', [])
             request: function (config) {
                 config.headers = config.headers || {};
                 if ($rootScope.token) {
-                    config.headers.test = $rootScope.token;
+                    config.headers.xtoken = $rootScope.token;
                 }
                 console.log("Headers = " + JSON.stringify(config.headers));
                 return config;
