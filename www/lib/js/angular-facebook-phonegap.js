@@ -29,8 +29,6 @@
             'flags',
             function (settings, flags) {
 
-                debugger
-
                 // Local javascript file that contains the Facebook SDK.
                 var localSDKSrc = angular.isDefined(settings.localSDK) ? settings.localSDK : 'http://connect.facebook.net/en_US/all.js';
                 if (angular.isString(localSDKSrc)) {

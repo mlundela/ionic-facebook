@@ -8,19 +8,21 @@
 angular.module('starter', ['ionic', 'facebook', 'starter.services', 'starter.controllers'])
 
     .config(['FacebookProvider', function(FacebookProvider) {
-        var application_conf_mobile = {
+
+        var conf = {
             appId: "214143325451509",
             oauth: true,
-            localSDK: 'lib/js/facebook-js-sdk.js', //Load sdk async
+            localSDK: 'lib/js/facebook-js-sdk.js', // Load sdk async
             nativeInterface: CDV.FB,
             status: false,
             frictionlessRequests: true,
             useCachedDialogs: false,
             cookies:true
         };
+
         // Here you could set your appId through the setAppId method and then initialize
         // or use the shortcut in the initialize method directly.
-        FacebookProvider.init(application_conf_mobile, false);
+        FacebookProvider.init(conf, false);
     }])
 
     .config(function ($httpProvider) {
