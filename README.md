@@ -1,6 +1,8 @@
-ionic-angular-cordova-seed
+ionic-facebook
 ==========================
 
-The perfect starting point for an Ionic project.
+Implement facebook authentication in an ionic app using the [phonegap-facebook-plugin](https://github.com/phonegap/phonegap-facebook-plugin)
+and the [angular-facebook](https://github.com/Ciul/angular-facebook) module.
 
-- [Ionic Tutorials](http://ionicframework.com/tutorials/)
+Supported platforms:
+- iOS
