@@ -85,7 +85,7 @@ angular.module('starter', ['ionic', 'facebook', 'starter.services', 'starter.con
             });
 
         // if none of the above states are matched, use this as the fallback
-        $urlRouterProvider.otherwise('/tab/pets');
+        $urlRouterProvider.otherwise('/tab/about');
 
     });
 

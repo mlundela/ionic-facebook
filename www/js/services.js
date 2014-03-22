@@ -11,35 +11,36 @@ angular.module('starter.services', [])
         if (typeof FB == 'undefined')
             console.log('FB variable does not exist. Check that you have included the Facebook JS SDK file.');
 
-        $rootScope.$on('Facebook:login', function (e, response) {
-            console.log("Logged in");
-            $rootScope.token = response.authResponse.accessToken;
+        $rootScope.$on('Facebook:authResponseChange', function (e, response) {
+            if (response.status == 'connected') {
+                console.log("Logged in");
+                $rootScope.token = response.authResponse.accessToken;
+            } else {
+                console.log("Logged out");
+                $rootScope.token = null;
+            }
         });
 
-        $rootScope.$on('Facebook:logout', function (e, response) {
-            console.log("Logged out");
-            $rootScope.token = null;
-        });
-
-        // FB.logout();
-        FB.getLoginStatus(function (response) {
+        Facebook.getLoginStatus(function (response) {
             if (response.status == 'connected') {
                 console.log('Allready logged in');
                 $rootScope.token = response.authResponse.accessToken;
             } else {
                 console.log('Trigger login');
-                FB.login(function (response) {}, { scope: "email" });
+                Facebook.login(function (response) {
+                }, { scope: "email" });
             }
         });
 
         return {
-            logout: function() {
+            logout: function () {
                 console.log('Trigger logout');
-                FB.logout();
+                Facebook.logout();
             },
-            login: function() {
+            login: function () {
                 console.log('Trigger login');
-                FB.login(function (response) {}, { scope: "email" });
+                Facebook.login(function (response) {
+                }, { scope: "email" });
             }
         }
 

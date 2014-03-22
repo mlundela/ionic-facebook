@@ -13,7 +13,7 @@ controllers.controller('PetDetailCtrl', function ($scope, $stateParams, PetServi
     $scope.pet = PetService.get($stateParams.petId);
 });
 
-controllers.controller('LoginCtrl', function ($scope, $http, $rootScope, FB_authentication) {
+controllers.controller('LoginCtrl', function ($scope, $http, FB_authentication) {
 
     $scope.login = function () {
         FB_authentication.login();
