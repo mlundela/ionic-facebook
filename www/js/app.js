@@ -10,7 +10,7 @@ angular.module('starter', ['ionic', 'facebook', 'starter.services', 'starter.con
     .config(['FacebookProvider', function(FacebookProvider) {
 
         var conf = {
-            appId: "214143325451509",
+            appId: "YOUR_FB_APP_ID_HERE",
             oauth: true,
             localSDK: 'lib/js/facebook-js-sdk.js', // Load sdk async
             nativeInterface: CDV.FB,
